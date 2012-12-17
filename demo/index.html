@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Closed Caption Demo</title>
+  <link rel="stylesheet" media="screen" href="bootstrap.min.css"/>
+  <link rel="stylesheet" media="screen" href="bootstrap-responsive.min.css"/>
+  <style type="text/css">
+    body {
+      padding-top: 60px;
+      padding-bottom: 40px;
+    }
+    .player-canvas {
+      border: solid 3px #ddd;
+      height: 500px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .player-canvas-instructions {
+      position: absolute;
+      line-height: 500px;
+      vertical-align: middle;
+      width: 100%;
+      text-align: center;
+      font-size: 1.4em;
+      color: #888;
+    }
+
+    .video-control {
+      margin-top: 10px;
+    }
+  </style>
+  <link rel="stylesheet" media="screen" href="../closed-caption.css"/>
+</head>
+<body>
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container-fluid">
+        <a class="brand" href="#">Closed Caption Demo</a>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span12">
+        <div id="player-canvas" class="player-canvas">
+          <p class="player-canvas-instructions">Video would play here.</p>
+          <div class="cc-area">
+            <span id="cc-text" class="cc-text"></span>
+          </div>
+        </div>
+        <a id="play-pause-button" class="btn btn-primary video-control">Play/Pause Captions</a>
+      </div><!--/span-->
+    </div><!--/row-->
+  </div><!--/container-fluid-->
+
+  <script src="jquery-1.8.3.min.js"></script>
+  <script src="../closed-caption.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      var closedCaption = new ClosedCaption($('#cc-text')[0]);
+      closedCaption.setCaptions([
+        { html: 'This is caption 1.', startTime: 0, endTime: 1000 },
+        { html: 'This is caption 2.', startTime: 2000 },
+        { html: 'This is caption 3.', startTime: 4000, endTime: 5000 },
+        { html: 'This is caption 4.', startTime: 6000, endTime: 7000 },
+        { html: 'This is caption 5.', startTime: 8000, endTime: 9000 }
+      ]);
+
+      $('#play-pause-button').bind('click', function(evt) {
+        evt.preventDefault();
+        closedCaption.togglePlay();
+      });
+    });
+  </script>
+</body>
+</html>
