@@ -2,7 +2,7 @@
 
 var ClosedCaption = function(element) {
   this.element = element;
-  element.animationPlayer = this;
+  element.closedCaption = this;
   var $element = this.$element = $(element);
   this.clearCurrentState();
 };
