@@ -5,11 +5,16 @@
   left: 0;
   text-align: center;
   padding: 10px;
-  visibility: hidden;
 }
 
 .cc-text {
   background-color: #555;
   padding: 4px;
   color: #fff;
+  visibility: hidden;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+       -o-user-select: none;
+          user-select: none;
 }
