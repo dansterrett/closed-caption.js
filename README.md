@@ -3,7 +3,13 @@ closed-caption.js
 
 A simple way to overlay closed captions over top a video.  View demo/index.html for an example of how to use it.
 
-The HTML should be structured like this:
+First, add the css and javascript to your page:
+
+    <link rel="stylesheet" media="screen" href="closed-caption.css"/>
+
+    <script src="closed-caption.js"></script>
+
+Add this snippet of HTML where you want the captions to appear:
 
     <div class="cc-area">
       <span id="cc-text" class="cc-text"></span>
