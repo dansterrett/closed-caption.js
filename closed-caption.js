@@ -15,7 +15,7 @@ var ClosedCaption = function ClosedCaption(element) {
 (function() {
   var convertMinutesSecondsToMS = function (timeAsMinutesSeconds) {
     var timeParts = timeAsMinutesSeconds.split(':');
-    return timeParts[0] * 1000 + timeParts[1] * 1000;
+    return timeParts[0] * 60000 + timeParts[1] * 1000;
   }
 
   ClosedCaption.prototype = {
